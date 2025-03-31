@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/your-repo-name/', // This will be replaced by the GitHub Action
+  base: '/sharmajiwangaurav.github.io/', // This will be replaced by the GitHub Action
 });
