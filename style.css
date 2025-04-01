@@ -47,11 +47,6 @@ p {
   z-index: 1;
 }
 
-.overlay {
-  position: relative;
-  z-index: 2;
-}
-
 
 .overlay.left-align {
   text-align: left;
