@@ -306,4 +306,11 @@ section.about p {
   background: #A55B4B;
   color: #fff;
 }
+.medium-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
 
