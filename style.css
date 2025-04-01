@@ -143,3 +143,27 @@ section.about p {
     margin-right: 2rem;
   }
 }
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
