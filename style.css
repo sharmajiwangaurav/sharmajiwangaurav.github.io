@@ -48,20 +48,17 @@ section.hero {
 
 .bg-images {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .bg-img {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: 1;
@@ -80,7 +77,7 @@ section.hero {
   z-index: 10;
 }
 
-/* LEFT-ALIGNED Full Width for First Section */
+/* Left-aligned full-width layout */
 .overlay.left-align {
   display: flex;
   align-items: flex-start;
@@ -91,7 +88,6 @@ section.hero {
   box-sizing: border-box;
 }
 
-/* Gradient box for text */
 .overlay.left-align .text-box {
   background: linear-gradient(to right, rgba(33, 15, 55, 0.6), rgba(33, 15, 55, 0));
   padding: 2rem;
