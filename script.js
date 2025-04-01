@@ -8,17 +8,19 @@ const locations = [
 ];
 
 const typewriter = document.getElementById("typewriter");
-const hero = document.getElementById("hero-section");
+const heroBg = document.getElementById("hero-bg");
 
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
 
 function updateBackground(imageName) {
-  if (hero) {
-    hero.style.backgroundImage = `url('images/${imageName}')`;
-    hero.style.backgroundSize = "cover";
-    hero.style.backgroundPosition = "center";
+  if (heroBg) {
+    heroBg.classList.remove("active");
+    setTimeout(() => {
+      heroBg.style.backgroundImage = `url('images/${imageName}')`;
+      heroBg.classList.add("active");
+    }, 100); // small delay helps the fade look smoother
   }
 }
 
