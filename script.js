@@ -15,7 +15,11 @@ let charIndex = 0;
 let isDeleting = false;
 
 function updateBackground(imageName) {
-  hero.style.backgroundImage = `url('images/${imageName}')`;
+  if (hero) {
+    hero.style.backgroundImage = `url('images/${imageName}')`;
+    hero.style.backgroundSize = "cover";
+    hero.style.backgroundPosition = "center";
+  }
 }
 
 function type() {
