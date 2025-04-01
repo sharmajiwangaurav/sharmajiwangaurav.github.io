@@ -35,7 +35,7 @@ function type() {
 
   if (!isDeleting && charIndex < current.name.length) {
     charIndex++;
-    setTimeout(type, 180); // slower typing
+    setTimeout(type, 130); // slower typing
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
     setTimeout(type, 60); // slower deleting
