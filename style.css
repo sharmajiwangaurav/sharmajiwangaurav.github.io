@@ -313,4 +313,13 @@ section.about p {
   vertical-align: middle;
   filter: brightness(0) invert(1);
 }
+.medium-link {
+  color: #DCA06D;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 
