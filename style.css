@@ -27,41 +27,32 @@ p {
 }
 
 /* Hero section */
-section.hero {
-  height: 100vh;
+.hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 5%;
   overflow: hidden;
 }
 
-/* Fading background layer */
 .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  z-index: 0;
+  background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 0;
 }
 
-.hero-bg.active {
+.hero-bg.visible {
   opacity: 1;
+  z-index: 1;
 }
 
-/* Text overlay */
 .overlay {
   position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  max-width: 600px;
+  z-index: 2;
 }
+
 
 .overlay.left-align {
   text-align: left;
