@@ -290,3 +290,20 @@ section.about p {
   margin-bottom: 1rem;
 }
 
+.email-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #DCA06D;
+  color: #210F37;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.email-button:hover {
+  background: #A55B4B;
+  color: #fff;
+}
+
