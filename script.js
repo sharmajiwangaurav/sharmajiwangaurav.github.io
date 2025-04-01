@@ -35,10 +35,10 @@ function type() {
 
   if (!isDeleting && charIndex < current.name.length) {
     charIndex++;
-    setTimeout(type, 250); // slow typing
+    setTimeout(type, 250); // slower typing
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
-    setTimeout(type, 100); // slow deleting
+    setTimeout(type, 100); // slower deleting
   } else {
     if (!isDeleting) {
       isDeleting = true;
@@ -47,13 +47,12 @@ function type() {
       isDeleting = false;
       index = (index + 1) % locations.length;
       crossfadeTo(locations[index].image);
-      setTimeout(type, 1000); // pause before typing next
+      setTimeout(type, 1000); // pause before next name
     }
   }
 }
 
 function updateTopBarLabel() {
-  const scrollY = window.scrollY;
   const sectionMap = Array.from(document.querySelectorAll("section")).map((sec) => ({
     id: sec.id,
     name: sec.dataset.name,
@@ -70,20 +69,24 @@ function updateTopBarLabel() {
   }
 }
 
-// 🧁 Show typewriter AFTER popup is closed
+// Start everything AFTER popup is closed
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("welcome-popup");
   const okBtn = document.getElementById("popup-ok");
 
-  okBtn.addEventListener("click", () => {
-    popup.style.opacity = "0";
-    setTimeout(() => {
-      popup.style.display = "none";
+  if (okBtn) {
+    okBtn.addEventListener("click", () => {
+      popup.style.opacity = "0";
+      setTimeout(() => {
+        popup.style.display = "none";
 
-      // 🎉 Start everything AFTER popup hides
-      crossfadeTo(locations[0].image);
-      type();
-      window.addEventListener("scroll", updateTopBarLabel);
-    }, 600);
-  });
+        // Now start typewriter and top bar label tracking
+        crossfadeTo(locations[0].image);
+        type();
+        window.addEventListener("scroll", updateTopBarLabel);
+      }, 600);
+    });
+  } else {
+    console.warn("popup-ok button not found");
+  }
 });
