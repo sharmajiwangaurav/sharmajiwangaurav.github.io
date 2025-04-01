@@ -330,4 +330,57 @@ section.about p {
   gap: 6px;
 }
 
+.kimchi-section {
+  padding: 4rem 2rem;
+  background: #fdf8f4;
+  color: #210F37;
+}
+
+.kimchi-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.kimchi-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #A55B4B;
+}
+
+.kimchi-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.kimchi-text h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  color: #A55B4B;
+  margin-bottom: 1rem;
+}
+
+.kimchi-text strong {
+  color: #DCA06D;
+}
+
+@media (max-width: 768px) {
+  .kimchi-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kimchi-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
 
