@@ -333,8 +333,9 @@ section.about p {
 .kimchi-section {
   padding: 4rem 2rem;
   background: #fdf8f4;
-  color: #210F37;
+  color: #210F37; /* Dark text for contrast */
 }
+
 
 .kimchi-container {
   display: flex;
@@ -358,6 +359,22 @@ section.about p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+.kimchi-text p {
+  color: #333; /* Dark gray for clean readability */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.kimchi-text em {
+  color: #4F1C51;
+  font-style: italic;
+}
+
+.kimchi-text strong {
+  color: #A55B4B;
+}
+
 
 .kimchi-text h2 {
   font-family: 'EB Garamond', serif;
