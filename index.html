@@ -6,17 +6,27 @@
   <title>Aakriti - Personal Page</title>
 
   <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="aos/aos.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Section 1: Where I'm From -->
-  <section class="hero" style="background-image: url('images/from.jpg')" data-aos="fade-up">
+  <section class="hero stacked-hero">
+    <!-- Background Images for Transition -->
+    <div class="bg-images">
+      <img src="images/pathankot.jpg" class="bg-img" id="bg-0" />
+      <img src="images/wellington.jpg" class="bg-img" id="bg-1" />
+      <img src="images/secunderabad.jpg" class="bg-img" id="bg-2" />
+      <img src="images/gurugram.jpg" class="bg-img" id="bg-3" />
+      <img src="images/delhi.jpg" class="bg-img" id="bg-4" />
+    </div>
+
+    <!-- Overlay Text Content -->
     <div class="overlay left-align">
       <h1>I am from <span class="location typewriter" id="typewriter"></span><span class="cursor">|</span></h1>
-      <p>A journey across places that shaped me.</p>
+      <p>A journey across places that shaped me. I am Aakriti.</p>
     </div>
   </section>
 
