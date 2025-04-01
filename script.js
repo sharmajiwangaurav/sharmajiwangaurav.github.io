@@ -75,3 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
   type();
   window.addEventListener("scroll", updateTopBarLabel);
 });
+// Popup close logic
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("welcome-popup");
+  const okBtn = document.getElementById("popup-ok");
+
+  okBtn.addEventListener("click", () => {
+    popup.style.opacity = "0";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 600);
+  });
+
+  // Init hero typewriter
+  crossfadeTo(locations[0].image);
+  type();
+
+  // Init scroll watcher
+  window.addEventListener("scroll", updateTopBarLabel);
+});
