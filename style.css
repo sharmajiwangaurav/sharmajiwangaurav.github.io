@@ -11,7 +11,27 @@
     scroll-behavior: smooth;
   }
   
-  /* Hero section with image and floating overlay */
+  /* Typography */
+  h1, h2 {
+    font-family: 'EB Garamond', serif;
+    color: #DCA06D;
+    margin-bottom: 1rem;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  h1:hover, h2:hover {
+    text-shadow: 0 0 10px #DCA06D;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #F0EAE2;
+    max-width: 600px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hero section */
   section.hero {
     height: 100vh;
     background-size: cover;
@@ -22,6 +42,7 @@
     justify-content: center;
     text-align: center;
     transition: background-image 0.8s ease-in-out;
+    background-attachment: fixed;
   }
   
   .overlay {
@@ -37,50 +58,41 @@
     background: rgba(79, 28, 81, 0.85);
   }
   
-  /* Headings */
-  h1, h2 {
+  .overlay.left-align {
+    text-align: left;
+    align-items: flex-start;
+    background: linear-gradient(to right, rgba(33, 15, 55, 0.8), rgba(33, 15, 55, 0));
+    max-width: 700px;
+    margin-left: 5%;
+  }
+  
+  /* Typewriter styles */
+  .location {
+    background: linear-gradient(to right, #DCA06D, #A55B4B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .cursor {
+    display: inline-block;
+    animation: blink 1s step-start infinite;
     color: #DCA06D;
-    margin-bottom: 1rem;
-    transition: text-shadow 0.3s ease;
+    font-weight: bold;
   }
   
-  h1:hover, h2:hover {
-    text-shadow: 0 0 10px #DCA06D;
+  @keyframes blink {
+    50% { opacity: 0; }
   }
   
-  p {
-    font-size: 1.2rem;
-    color: #F0EAE2;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-  }
-  
-  /* Parallax effect for sections */
-  section.hero, section.split {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  section.hero {
-    background-attachment: fixed; /* Parallax effect */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .split .image {
-    background-attachment: fixed; /* Parallax effect */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Split section with image and text */
+  /* Split section */
   section.split {
     display: flex;
     flex-wrap: wrap;
     min-height: 100vh;
     background-color: #210F37;
+    position: relative;
   }
   
   .split .text {
@@ -102,6 +114,7 @@
     flex: 1 1 50%;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     transition: transform 0.5s ease;
   }
   
@@ -109,6 +122,7 @@
     transform: scale(1.02);
   }
   
+  /* About section */
   section.about {
     padding: 5rem 2rem;
     text-align: center;
@@ -119,7 +133,6 @@
   
   section.about h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
     color: #210F37;
   }
   
@@ -131,6 +144,7 @@
     color: #210F37;
   }
   
+  /* Links & buttons */
   a, button {
     color: #DCA06D;
     text-decoration: none;
@@ -142,6 +156,7 @@
     transform: scale(1.05);
   }
   
+  /* Responsive */
   @media (max-width: 768px) {
     section.split {
       flex-direction: column;
@@ -149,6 +164,11 @@
   
     h1 {
       font-size: 2rem;
+    }
+  
+    .overlay.left-align {
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
   }
   

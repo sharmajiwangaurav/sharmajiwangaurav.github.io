@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aakriti - Personal Page</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="aos/aos.css"/>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="aos/aos.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Section 1: Where I'm From -->
   <section class="hero" style="background-image: url('images/from.jpg')" data-aos="fade-up">
-    <div class="overlay">
-      <h1 data-aos="fade-up">I’m from the vibrant heart of India</h1>
-      <p data-aos="fade-up" data-aos-delay="200">Where colors, culture, and curiosity collide.</p>
+    <div class="overlay left-align">
+      <h1>I am from <span class="location typewriter" id="typewriter"></span><span class="cursor">|</span></h1>
+      <p>A journey across places that shaped me.</p>
     </div>
   </section>
 
@@ -40,15 +43,17 @@
     <p>I’m Aakriti — curious by nature, passionate by heart, and driven to leave an impact. This space is just a glimpse into my journey.</p>
   </section>
 
+  <!-- Scripts -->
   <script src="aos/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1000,  // Animation duration in milliseconds
-      once: true,      // Animation occurs only once
+      duration: 1000,
+      once: true,
       easing: 'ease-in-out',
-      offset: 100,     // Start animation after scrolling 100px
-      delay: 200       // Delay before the animation starts
+      offset: 100,
+      delay: 200
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
