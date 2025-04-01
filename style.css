@@ -12,6 +12,38 @@ body, html {
   scroll-behavior: smooth;
 }
 
+/* Top Bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  background: rgba(33, 15, 55, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portrait {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #DCA06D;
+}
+
+.top-right {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #DCA06D;
+  text-transform: uppercase;
+}
+
 /* Typography */
 h1, h2 {
   font-family: 'EB Garamond', serif;
@@ -44,7 +76,7 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  transition: opacity 1s ease-in-out;
   z-index: 0;
 }
 
@@ -53,6 +85,7 @@ p {
   z-index: 1;
 }
 
+/* Text overlay */
 .overlay {
   position: relative;
   z-index: 2;
@@ -65,6 +98,24 @@ p {
 
 .overlay.left-align {
   text-align: left;
+}
+
+/* Highlighted name */
+.highlight-name {
+  background: linear-gradient(to right, #DCA06D, #A55B4B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(220, 160, 109, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(220, 160, 109, 0.6);
+  }
 }
 
 /* Typewriter effect */
@@ -122,10 +173,6 @@ section.split {
 }
 
 /* Hobbies section */
-.hobbies-section {
-  background-attachment: scroll;
-}
-
 .hobbies-section .overlay {
   background-color: rgba(33, 15, 55, 0.6);
   padding: 2rem;
@@ -153,19 +200,7 @@ section.about p {
   color: #210F37;
 }
 
-/* Links */
-a, button {
-  color: #DCA06D;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-a:hover, button:hover {
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
   section.split {
     flex-direction: column;
@@ -184,21 +219,14 @@ a:hover, button:hover {
   .hero {
     padding-left: 2rem;
   }
-}
-.highlight-name {
-  background: linear-gradient(to right, #DCA06D, #A55B4B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  animation: glow-pulse 3s ease-in-out infinite;
-}
 
-@keyframes glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(220, 160, 109, 0.3);
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 1rem;
   }
-  50% {
-    text-shadow: 0 0 20px rgba(220, 160, 109, 0.6);
+
+  .top-right {
+    margin-top: 0.25rem;
   }
 }
-
