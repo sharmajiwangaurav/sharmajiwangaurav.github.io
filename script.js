@@ -8,19 +8,23 @@ const locations = [
 ];
 
 const typewriter = document.getElementById("typewriter");
-const heroBg = document.getElementById("hero-bg");
+const bg1 = document.getElementById("hero-bg-1");
+const bg2 = document.getElementById("hero-bg-2");
 
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
+let currentBg = 1;
 
-function updateBackground(imageName) {
-  if (!heroBg) return;
-  heroBg.classList.remove("active");
-  setTimeout(() => {
-    heroBg.style.backgroundImage = `url('images/${imageName}')`;
-    heroBg.classList.add("active");
-  }, 100); // short delay helps fade transition
+function crossfadeTo(imageUrl) {
+  const incoming = currentBg === 1 ? bg2 : bg1;
+  const outgoing = currentBg === 1 ? bg1 : bg2;
+
+  incoming.style.backgroundImage = `url('images/${imageUrl}')`;
+  incoming.classList.add("visible");
+  outgoing.classList.remove("visible");
+
+  currentBg = currentBg === 1 ? 2 : 1;
 }
 
 function type() {
@@ -42,13 +46,13 @@ function type() {
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
-      updateBackground(locations[index].image);
+      crossfadeTo(locations[index].image);
       setTimeout(type, 300);
     }
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateBackground(locations[0].image);
+  crossfadeTo(locations[0].image);
   type();
 });
