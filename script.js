@@ -35,21 +35,22 @@ function type() {
 
   if (!isDeleting && charIndex < current.name.length) {
     charIndex++;
-    setTimeout(type, 180); // typing speed
+    setTimeout(type, 250); // slower typing
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
-    setTimeout(type, 90); // delete speed
+    setTimeout(type, 100); // slower delete
   } else {
     if (!isDeleting) {
       isDeleting = true;
-      setTimeout(type, 1500); // pause after full word typed
+      setTimeout(type, 2000); // pause after full name
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
       crossfadeTo(locations[index].image);
-      setTimeout(type, 800); // pause before typing next
+      setTimeout(type, 1000); // pause before next word
     }
   }
+
 
 
 function updateTopBarLabel() {
