@@ -38,16 +38,16 @@ function type() {
     setTimeout(type, 130); // slower typing
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
-    setTimeout(type, 60); // slower deleting
+    setTimeout(type, 130); // slower deleting
   } else {
     if (!isDeleting) {
       isDeleting = true;
-      setTimeout(type, 500); // pause after full name
+      setTimeout(type, 800); // pause after full name
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
       crossfadeTo(locations[index].image);
-      setTimeout(type, 500); // pause before next name
+      setTimeout(type, 800); // pause before next name
     }
   }
 }
