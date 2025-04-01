@@ -30,7 +30,6 @@ function crossfadeTo(imageUrl) {
 function type() {
   const current = locations[index];
   const text = current.name.substring(0, charIndex);
-
   typewriter.textContent = text;
 
   if (!isDeleting && charIndex < current.name.length) {
