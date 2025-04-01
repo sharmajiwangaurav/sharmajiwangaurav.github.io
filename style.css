@@ -178,6 +178,14 @@ section.split {
   padding: 2rem;
   border-radius: 12px;
 }
+.hobbies-section {
+  background-image: url('images/hobbies.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
 
 /* About section */
 section.about {
