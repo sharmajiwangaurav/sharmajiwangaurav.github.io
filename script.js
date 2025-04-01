@@ -15,13 +15,12 @@ let charIndex = 0;
 let isDeleting = false;
 
 function updateBackground(imageName) {
-  if (heroBg) {
-    heroBg.classList.remove("active");
-    setTimeout(() => {
-      heroBg.style.backgroundImage = `url('images/${imageName}')`;
-      heroBg.classList.add("active");
-    }, 100); // small delay helps the fade look smoother
-  }
+  if (!heroBg) return;
+  heroBg.classList.remove("active");
+  setTimeout(() => {
+    heroBg.style.backgroundImage = `url('images/${imageName}')`;
+    heroBg.classList.add("active");
+  }, 100); // short delay helps fade transition
 }
 
 function type() {
