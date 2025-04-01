@@ -1,174 +1,202 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #210F37;
-    color: #ffffff;
-    scroll-behavior: smooth;
-  }
-  
-  /* Typography */
-  h1, h2 {
-    font-family: 'EB Garamond', serif;
-    color: #DCA06D;
-    margin-bottom: 1rem;
-    transition: text-shadow 0.3s ease;
-  }
-  
-  h1:hover, h2:hover {
-    text-shadow: 0 0 10px #DCA06D;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    color: #F0EAE2;
-    max-width: 600px;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-  }
-  
-  /* Hero section */
-  section.hero {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: background-image 0.8s ease-in-out;
-    background-attachment: fixed;
-  }
-  
-  .overlay {
-    background: rgba(79, 28, 81, 0.7);
-    padding: 2rem;
-    border-radius: 16px;
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, background 0.3s ease;
-  }
-  
-  .overlay:hover {
-    transform: scale(1.05);
-    background: rgba(79, 28, 81, 0.85);
-  }
-  
-  .overlay.left-align {
-    text-align: left;
-    align-items: flex-start;
-    background: linear-gradient(to right, rgba(33, 15, 55, 0.8), rgba(33, 15, 55, 0));
-    max-width: 700px;
-    margin-left: 5%;
-  }
-  
-  /* Typewriter styles */
-  .location {
-    background: linear-gradient(to right, #DCA06D, #A55B4B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    font-weight: bold;
-  }
-  
-  .cursor {
-    display: inline-block;
-    animation: blink 1s step-start infinite;
-    color: #DCA06D;
-    font-weight: bold;
-  }
-  
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
-  
-  /* Split section */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #210F37;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+h1, h2 {
+  font-family: 'EB Garamond', serif;
+  color: #DCA06D;
+  margin-bottom: 1rem;
+  transition: text-shadow 0.3s ease;
+}
+
+h1:hover, h2:hover {
+  text-shadow: 0 0 10px #DCA06D;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #F0EAE2;
+  max-width: 600px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+/* HERO Section */
+section.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Parallax & Overlay for stacked background */
+.stacked-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.bg-img.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.overlay {
+  background: rgba(79, 28, 81, 0.7);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.overlay:hover {
+  transform: scale(1.05);
+  background: rgba(79, 28, 81, 0.85);
+}
+
+.overlay.left-align {
+  text-align: left;
+  align-items: flex-start;
+  background: linear-gradient(to right, rgba(33, 15, 55, 0.8), rgba(33, 15, 55, 0));
+  max-width: 700px;
+  margin-left: 5%;
+}
+
+/* Typewriter Text */
+.location {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.cursor {
+  color: #ffffff;
+  font-weight: bold;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* SPLIT Section */
+section.split {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-color: #210F37;
+  position: relative;
+}
+
+.split .text {
+  flex: 1 1 50%;
+  padding: 3rem;
+  background-color: #4F1C51;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.split .text:hover {
+  background-color: #5d2560;
+}
+
+.split .image {
+  flex: 1 1 50%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: transform 0.5s ease;
+}
+
+.split .image:hover {
+  transform: scale(1.02);
+}
+
+/* ABOUT Section */
+section.about {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #A55B4B;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+section.about h2 {
+  font-size: 2.5rem;
+  color: #210F37;
+}
+
+section.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #210F37;
+}
+
+/* Links & Buttons */
+a, button {
+  color: #DCA06D;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover, button:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   section.split {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100vh;
-    background-color: #210F37;
-    position: relative;
-  }
-  
-  .split .text {
-    flex: 1 1 50%;
-    padding: 3rem;
-    background-color: #4F1C51;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    transition: background-color 0.3s ease;
   }
-  
-  .split .text:hover {
-    background-color: #5d2560;
+
+  h1 {
+    font-size: 2rem;
   }
-  
-  .split .image {
-    flex: 1 1 50%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    transition: transform 0.5s ease;
+
+  .overlay.left-align {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
-  
-  .split .image:hover {
-    transform: scale(1.02);
-  }
-  
-  /* About section */
-  section.about {
-    padding: 5rem 2rem;
-    text-align: center;
-    background-color: #A55B4B;
-    color: #fff;
-    transition: background-color 0.3s ease;
-  }
-  
-  section.about h2 {
-    font-size: 2.5rem;
-    color: #210F37;
-  }
-  
-  section.about p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #210F37;
-  }
-  
-  /* Links & buttons */
-  a, button {
-    color: #DCA06D;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  a:hover, button:hover {
-    color: #fff;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    section.split {
-      flex-direction: column;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    .overlay.left-align {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-  }
-  
+}
