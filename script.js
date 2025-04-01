@@ -1,10 +1,12 @@
 const locations = [
-  { name: "Pathankot", id: "bg-0" },
-  { name: "Wellington", id: "bg-1" },
-  { name: "Secunderabad", id: "bg-2" },
-  { name: "Gurugram", id: "bg-3" },
-  { name: "Delhi", id: "bg-4" }
+  { name: "Ha", id: "bg-0" },
+  { name: "Pathankot", id: "bg-1" },
+  { name: "Wellington", id: "bg-2" },
+  { name: "Secunderabad", id: "bg-3" },
+  { name: "Gurugram", id: "bg-4" },
+  { name: "Delhi", id: "bg-5" }
 ];
+
 
 const typewriter = document.getElementById("typewriter");
 let index = 0;
