@@ -35,14 +35,14 @@ function type() {
 
   if (!isDeleting && charIndex < current.name.length) {
     charIndex++;
-    setTimeout(type, 250); // slower typing
+    setTimeout(type, 180); // slower typing
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
-    setTimeout(type, 100); // slower deleting
+    setTimeout(type, 60); // slower deleting
   } else {
     if (!isDeleting) {
       isDeleting = true;
-      setTimeout(type, 2000); // pause after full name
+      setTimeout(type, 1000); // pause after full name
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
