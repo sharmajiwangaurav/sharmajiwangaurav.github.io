@@ -4,18 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aakriti - Personal Page</title>
-
-  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="aos/aos.css" />
+  <link href="aos/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Section 1: Where I'm From -->
   <section class="hero stacked-hero">
-    <!-- Background Images for Transition -->
     <div class="bg-images">
       <img src="images/ha.jpg" class="bg-img" id="bg-0" />
       <img src="images/pathankot.jpg" class="bg-img" id="bg-1" />
@@ -25,14 +20,12 @@
       <img src="images/delhi.jpg" class="bg-img" id="bg-5" />
     </div>
 
-    <!-- Overlay Text Content -->
     <div class="overlay left-align">
       <h1>I am from <span class="location typewriter" id="typewriter"></span><span class="cursor">|</span></h1>
       <p>A journey across places that shaped me. I am Aakriti.</p>
     </div>
   </section>
 
-  <!-- Section 2: What I Like to Do -->
   <section class="split" data-aos="fade-right">
     <div class="text">
       <h2>I love building things that matter.</h2>
@@ -41,7 +34,6 @@
     <div class="image" style="background-image: url('images/do.jpg')" data-aos="zoom-in"></div>
   </section>
 
-  <!-- Section 3: My Hobbies -->
   <section class="hero" style="background-image: url('images/hobbies.jpg')" data-aos="fade-up">
     <div class="overlay">
       <h1 data-aos="zoom-in">Beyond the screen, I love...</h1>
@@ -49,14 +41,12 @@
     </div>
   </section>
 
-  <!-- Section 4: About Me -->
   <section class="about" data-aos="fade-in">
     <h2>A Little About Me</h2>
     <p>I’m Aakriti — curious by nature, passionate by heart, and driven to leave an impact. This space is just a glimpse into my journey.</p>
   </section>
 
-  <!-- Scripts -->
-  <script src="aos/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
       duration: 1000,
@@ -67,6 +57,5 @@
     });
   </script>
   <script src="script.js"></script>
-  
 </body>
 </html>
