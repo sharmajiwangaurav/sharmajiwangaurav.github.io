@@ -1,142 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
+.overlay.left-align {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  padding: 5%;
   box-sizing: border-box;
 }
 
-body, html {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #210F37;
-  color: #ffffff;
-  scroll-behavior: smooth;
-}
-
-/* Typography */
-h1, h2 {
-  font-family: 'EB Garamond', serif;
-  color: #DCA06D;
-  margin-bottom: 1rem;
-  transition: text-shadow 0.3s ease;
-}
-
-h1:hover, h2:hover {
-  text-shadow: 0 0 10px #DCA06D;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #F0EAE2;
-  max-width: 600px;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
-/* Hero Section */
-section.hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.stacked-hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.bg-img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1;
-}
-
-.bg-img.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/* Overlay */
-.overlay {
-  background: none;
-  padding: 2rem;
-  position: relative;
-  z-index: 10;
-}
-
-.overlay:hover {
-  transform: scale(1.05);
-}
-
-/* Left-aligned intro overlay */
-.overlay.left-align {
-  text-align: left;
-  align-items: flex-start;
+.overlay.left-align .text-box {
   background: linear-gradient(to right, rgba(33, 15, 55, 0.6), rgba(33, 15, 55, 0));
-  width: 100%;
-  max-width: none;
-  padding-left: 5%;
-  padding-right: 30%;
-  border-radius: 0;
-}
-
-/* Typewriter Text */
-.location {
-  color: #ffffff;
-  font-weight: bold;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
-}
-
-.cursor {
-  color: #ffffff;
-  font-weight: bold;
-  animation: blink 1s step-start infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* Split Section */
-section.split {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 100vh;
-  background-color: #210F37;
-  position: relative;
-  z-index: 5;
-}
-
-.split .text {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  background: transparent;
-}
-
-.text-box {
-  background-color: rgba(79, 28, 81, 0.8);
   padding: 2rem;
   border-radius: 12px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  max-width: 600px;
 }
-
-.split .image {
