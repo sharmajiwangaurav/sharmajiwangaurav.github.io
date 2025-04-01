@@ -190,6 +190,7 @@ a:hover, button:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(220, 160, 109, 0.3);
+  animation: glow-pulse 3s ease-in-out infinite;
 }
+
 
