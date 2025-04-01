@@ -11,29 +11,11 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Typography */
-h1, h2 {
-  font-family: 'EB Garamond', serif;
-  color: #DCA06D;
-  margin-bottom: 1rem;
-  transition: text-shadow 0.3s ease;
-}
-
-h1:hover, h2:hover {
-  text-shadow: 0 0 10px #DCA06D;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #F0EAE2;
-  max-width: 600px;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
 /* Hero Section */
 section.hero {
   height: 100vh;
+  background-size: cover;
+  background-position: center;
   position: relative;
   display: flex;
   align-items: center;
@@ -41,66 +23,38 @@ section.hero {
   text-align: center;
 }
 
-.stacked-hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-images {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bg-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1;
-}
-
-.bg-img.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/* Overlay Base */
 .overlay {
-  background: none;
+  background: rgba(79, 28, 81, 0.7);
   padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
   position: relative;
   z-index: 10;
 }
 
-/* Left-aligned full-width layout */
 .overlay.left-align {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 100%;
-  padding: 5%;
-  box-sizing: border-box;
+  text-align: left;
+  max-width: 700px;
+  margin-left: 5%;
 }
 
-.overlay.left-align .text-box {
-  background: linear-gradient(to right, rgba(33, 15, 55, 0.6), rgba(33, 15, 55, 0));
-  padding: 2rem;
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
+h1, h2 {
+  font-family: 'EB Garamond', serif;
+  color: #DCA06D;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #F0EAE2;
   max-width: 600px;
+  line-height: 1.6;
 }
 
-/* Typewriter Text */
+/* Typewriter effect */
 .location {
   color: #ffffff;
   font-weight: bold;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
 .cursor {
@@ -120,7 +74,6 @@ section.split {
   min-height: 100vh;
   background-color: #210F37;
   position: relative;
-  z-index: 5;
 }
 
 .split .text {
@@ -129,7 +82,6 @@ section.split {
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  background: transparent;
 }
 
 .text-box {
@@ -152,10 +104,6 @@ section.split {
 }
 
 /* Hobbies Section */
-.hobbies-section {
-  background-attachment: scroll;
-}
-
 .hobbies-section .overlay {
   background-color: rgba(33, 15, 55, 0.6);
   padding: 2rem;
@@ -168,9 +116,6 @@ section.about {
   text-align: center;
   background-color: #A55B4B;
   color: #fff;
-  position: relative;
-  z-index: 5;
-  transition: background-color 0.3s ease;
 }
 
 section.about h2 {
@@ -186,18 +131,6 @@ section.about p {
   color: #210F37;
 }
 
-/* Links */
-a, button {
-  color: #DCA06D;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-a:hover, button:hover {
-  color: #fff;
-  transform: scale(1.05);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   section.split {
@@ -209,11 +142,7 @@ a:hover, button:hover {
   }
 
   .overlay.left-align {
-    padding: 2rem;
-    flex-direction: column;
-  }
-
-  .overlay.left-align .text-box {
-    width: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 }
