@@ -185,3 +185,11 @@ a:hover, button:hover {
     padding-left: 2rem;
   }
 }
+.highlight-name {
+  background: linear-gradient(to right, #DCA06D, #A55B4B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(220, 160, 109, 0.3);
+}
+
