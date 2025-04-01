@@ -42,12 +42,12 @@ function type() {
   } else {
     if (!isDeleting) {
       isDeleting = true;
-      setTimeout(type, 1000); // pause after full name
+      setTimeout(type, 500); // pause after full name
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
       crossfadeTo(locations[index].image);
-      setTimeout(type, 1000); // pause before next name
+      setTimeout(type, 500); // pause before next name
     }
   }
 }
