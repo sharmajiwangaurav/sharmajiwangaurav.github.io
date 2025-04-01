@@ -4,14 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aakriti - Personal Page</title>
+
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="aos/aos.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- First Section with static image background -->
-  <section class="hero" style="background-image: url('images/pathankot.jpg')">
+  <!-- Section 1: Where I'm From -->
+  <section class="hero stacked-hero">
+    <!-- Background Images for Transition -->
+    <div class="bg-images">
+      <img src="images/pathankot.jpg" class="bg-img" id="bg-0" />
+      <img src="images/wellington.jpg" class="bg-img" id="bg-1" />
+      <img src="images/secunderabad.jpg" class="bg-img" id="bg-2" />
+      <img src="images/gurugram.jpg" class="bg-img" id="bg-3" />
+      <img src="images/delhi.jpg" class="bg-img" id="bg-4" />
+    </div>
+
+    <!-- Overlay Text Content -->
     <div class="overlay left-align">
       <h1>I am from <span class="location typewriter" id="typewriter"></span><span class="cursor">|</span></h1>
       <p>A journey across places that shaped me. I am Aakriti.</p>
@@ -21,16 +33,14 @@
   <!-- Section 2: What I Like to Do -->
   <section class="split" data-aos="fade-right">
     <div class="text">
-      <div class="text-box">
-        <h2>I love building things that matter.</h2>
-        <p>From designing web pages to exploring AI, I enjoy making ideas come alive through code and creativity.</p>
-      </div>
+      <h2>I love building things that matter.</h2>
+      <p>From designing web pages to exploring AI, I enjoy making ideas come alive through code and creativity.</p>
     </div>
     <div class="image" style="background-image: url('images/do.jpg')" data-aos="zoom-in"></div>
   </section>
 
   <!-- Section 3: My Hobbies -->
-  <section class="hero hobbies-section" style="background-image: url('images/hobbies.jpg')" data-aos="fade-up">
+  <section class="hero" style="background-image: url('images/hobbies.jpg')" data-aos="fade-up">
     <div class="overlay">
       <h1 data-aos="zoom-in">Beyond the screen, I love...</h1>
       <p data-aos="fade-up">Sketching, traveling, capturing moments, and getting lost in books.</p>
@@ -43,7 +53,8 @@
     <p>I’m Aakriti — curious by nature, passionate by heart, and driven to leave an impact. This space is just a glimpse into my journey.</p>
   </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts -->
+  <script src="aos/aos.js"></script>
   <script>
     AOS.init({
       duration: 1000,
