@@ -1,3 +1,4 @@
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -11,30 +12,7 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Hero Section */
-section.hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 5%;
-  position: relative;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  max-width: 600px;
-}
-
-.overlay.left-align {
-  text-align: left;
-}
-
+/* Typography */
 h1, h2 {
   font-family: 'EB Garamond', serif;
   color: #DCA06D;
@@ -46,6 +24,47 @@ p {
   color: #F0EAE2;
   max-width: 600px;
   line-height: 1.6;
+}
+
+/* Hero section */
+section.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;
+  overflow: hidden;
+}
+
+/* Fading background layer */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.active {
+  opacity: 1;
+}
+
+/* Text overlay */
+.overlay {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  max-width: 600px;
+}
+
+.overlay.left-align {
+  text-align: left;
 }
 
 /* Typewriter effect */
@@ -64,13 +83,14 @@ p {
   50% { opacity: 0; }
 }
 
-/* Split Section */
+/* Split section */
 section.split {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
   background-color: #210F37;
   position: relative;
+  z-index: 5;
 }
 
 .split .text {
@@ -79,6 +99,7 @@ section.split {
   align-items: center;
   justify-content: center;
   padding: 3rem;
+  background: transparent;
 }
 
 .text-box {
@@ -100,14 +121,18 @@ section.split {
   transform: scale(1.02);
 }
 
-/* Hobbies Section */
+/* Hobbies section */
+.hobbies-section {
+  background-attachment: scroll;
+}
+
 .hobbies-section .overlay {
   background-color: rgba(33, 15, 55, 0.6);
   padding: 2rem;
   border-radius: 12px;
 }
 
-/* About Section */
+/* About section */
 section.about {
   padding: 5rem 2rem;
   text-align: center;
@@ -128,7 +153,19 @@ section.about p {
   color: #210F37;
 }
 
-/* Responsive */
+/* Links */
+a, button {
+  color: #DCA06D;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover, button:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
   section.split {
     flex-direction: column;
@@ -139,55 +176,12 @@ section.about p {
   }
 
   .overlay.left-align {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding-left: 2rem;
   }
 }
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-bg.active {
-  opacity: 1;
-}
-
-.overlay {
-  position: relative;
-  z-index: 1;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-bg.active {
-  opacity: 1;
-}
-
-.overlay {
-  position: relative;
-  z-index: 1;
-}
-
