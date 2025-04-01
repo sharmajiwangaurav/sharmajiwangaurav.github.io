@@ -1,16 +1,30 @@
-const locations = ["Ha", "Pathankot", "Wellington", "Secunderabad", "Gurugram", "Delhi"];
+const locations = [
+  { name: "Ha", image: "ha.jpg" },
+  { name: "Pathankot", image: "pathankot.jpg" },
+  { name: "Wellington", image: "wellington.jpg" },
+  { name: "Secunderabad", image: "secunderabad.jpg" },
+  { name: "Gurugram", image: "gurugram.jpg" },
+  { name: "Delhi", image: "delhi.jpg" }
+];
+
 const typewriter = document.getElementById("typewriter");
+const hero = document.getElementById("hero-section");
+
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
 
+function updateBackground(imageName) {
+  hero.style.backgroundImage = `url('images/${imageName}')`;
+}
+
 function type() {
   const current = locations[index];
-  const text = current.substring(0, charIndex);
+  const text = current.name.substring(0, charIndex);
 
   typewriter.textContent = text;
 
-  if (!isDeleting && charIndex < current.length) {
+  if (!isDeleting && charIndex < current.name.length) {
     charIndex++;
     setTimeout(type, 120);
   } else if (isDeleting && charIndex > 0) {
@@ -23,9 +37,13 @@ function type() {
     } else {
       isDeleting = false;
       index = (index + 1) % locations.length;
+      updateBackground(locations[index].image);
       setTimeout(type, 300);
     }
   }
 }
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("DOMContentLoaded", () => {
+  updateBackground(locations[0].image);
+  type();
+});
