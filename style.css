@@ -124,29 +124,41 @@ section.split {
 
 .split .text {
   flex: 1 1 50%;
-  padding: 3rem;
-  background-color: #4F1C51;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  color: #fff;
-  transition: background-color 0.3s ease;
+  padding: 3rem;
+  background: transparent;
 }
 
-.split .text:hover {
-  background-color: #5d2560;
+.text-box {
+  background-color: rgba(79, 28, 81, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
 }
 
 .split .image {
   flex: 1 1 50%;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   transition: transform 0.5s ease;
 }
 
 .split .image:hover {
   transform: scale(1.02);
+}
+
+/* Hobbies Section */
+.hobbies-section {
+  background-attachment: scroll;
+}
+
+.hobbies-section .overlay {
+  background-color: rgba(33, 15, 55, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 /* About Section */
