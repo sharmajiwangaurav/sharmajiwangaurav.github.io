@@ -10,6 +10,7 @@ const locations = [
 const typewriter = document.getElementById("typewriter");
 const bg1 = document.getElementById("hero-bg-1");
 const bg2 = document.getElementById("hero-bg-2");
+const sectionLabel = document.getElementById("section-name");
 
 let index = 0;
 let charIndex = 0;
@@ -51,7 +52,26 @@ function type() {
   }
 }
 
+function updateTopBarLabel() {
+  const scrollY = window.scrollY;
+  const sectionMap = Array.from(document.querySelectorAll("section")).map((sec) => ({
+    id: sec.id,
+    name: sec.dataset.name,
+    el: sec
+  }));
+
+  for (let i = sectionMap.length - 1; i >= 0; i--) {
+    const { el, name } = sectionMap[i];
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= 100) {
+      sectionLabel.textContent = name;
+      break;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   crossfadeTo(locations[0].image);
   type();
+  window.addEventListener("scroll", updateTopBarLabel);
 });
