@@ -11,16 +11,34 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Typography */
+/* Hero Section */
+section.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  max-width: 600px;
+}
+
+.overlay.left-align {
+  text-align: left;
+}
+
 h1, h2 {
   font-family: 'EB Garamond', serif;
   color: #DCA06D;
   margin-bottom: 1rem;
-  transition: text-shadow 0.3s ease;
-}
-
-h1:hover, h2:hover {
-  text-shadow: 0 0 10px #DCA06D;
 }
 
 p {
@@ -28,81 +46,12 @@ p {
   color: #F0EAE2;
   max-width: 600px;
   line-height: 1.6;
-  transition: color 0.3s ease;
 }
 
-/* HERO Section */
-section.hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Parallax & Overlay for stacked background */
-.stacked-hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-}
-
-.bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1;
-}
-
-.bg-img.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-.overlay {
-  background: rgba(79, 28, 81, 0.7);
-  padding: 2rem;
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-  transition: transform 0.3s ease, background 0.3s ease;
-  position: relative;
-  z-index: 5;
-}
-
-.overlay:hover {
-  transform: scale(1.05);
-  background: rgba(79, 28, 81, 0.85);
-}
-
-.overlay.left-align {
-  text-align: left;
-  align-items: flex-start;
-  background: linear-gradient(to right, rgba(33, 15, 55, 0.8), rgba(33, 15, 55, 0));
-  max-width: 700px;
-  margin-left: 5%;
-}
-
-/* Typewriter Text */
+/* Typewriter effect */
 .location {
   color: #ffffff;
   font-weight: bold;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
 .cursor {
@@ -115,7 +64,7 @@ section.hero {
   50% { opacity: 0; }
 }
 
-/* SPLIT Section */
+/* Split Section */
 section.split {
   display: flex;
   flex-wrap: wrap;
@@ -126,24 +75,24 @@ section.split {
 
 .split .text {
   flex: 1 1 50%;
-  padding: 3rem;
-  background-color: #4F1C51;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  color: #fff;
-  transition: background-color 0.3s ease;
+  padding: 3rem;
 }
 
-.split .text:hover {
-  background-color: #5d2560;
+.text-box {
+  background-color: rgba(79, 28, 81, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
 }
 
 .split .image {
   flex: 1 1 50%;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   transition: transform 0.5s ease;
 }
 
@@ -151,13 +100,19 @@ section.split {
   transform: scale(1.02);
 }
 
-/* ABOUT Section */
+/* Hobbies Section */
+.hobbies-section .overlay {
+  background-color: rgba(33, 15, 55, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* About Section */
 section.about {
   padding: 5rem 2rem;
   text-align: center;
   background-color: #A55B4B;
   color: #fff;
-  transition: background-color 0.3s ease;
 }
 
 section.about h2 {
@@ -171,18 +126,6 @@ section.about p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #210F37;
-}
-
-/* Links & Buttons */
-a, button {
-  color: #DCA06D;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-a:hover, button:hover {
-  color: #fff;
-  transform: scale(1.05);
 }
 
 /* Responsive */
